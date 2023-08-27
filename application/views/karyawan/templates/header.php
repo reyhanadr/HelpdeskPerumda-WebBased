@@ -131,7 +131,7 @@
                             <li class="list-group list-group-divider scroller" data-height="240px" data-color="#71808f">
                                 <div>
                                     <?php foreach ($notif as $notifikasi) : ?>
-                                    <a class="list-group-item">
+                                    <a href="<?php echo base_url()?>index.php/<?php echo $notifikasi->link;?>" class="list-group-item">
                                         <div class="media">
                                             <div class="media-img">
                                                 <span class="badge badge-success badge-big">
@@ -162,7 +162,6 @@
                         <ul class="dropdown-menu dropdown-menu-right">
                             <a class="dropdown-item" href="<?= base_url('karyawan/Profil'); ?>"><i
                                     class="fa fa-user"></i>My Profile</a>
-                            <a class="dropdown-item" href="javascript:;"><i class="fa fa-support"></i>Support</a>
                             <li class="dropdown-divider"></li>
                             <a class="dropdown-item" href="<?php echo base_url('index.php/Home/logout'); ?>"><i
                                     class="fa fa-power-off"></i>Logout</a>

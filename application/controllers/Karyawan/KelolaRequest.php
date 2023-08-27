@@ -156,6 +156,7 @@ class KelolaRequest extends CI_Controller{
                     'message_for_teknisi' => 'Perangkat '. $nama_perangkat . 'Memiliki Masalah dan Butuh Diperbaiki.',
                     'message_for_karyawan' => 'Anda Telah Mengajukan Request untuk perangkat '. $nama_perangkat . '.',
                     'created_at' => $tanggal_dibuat,
+                    'link' => 'Karyawan/Dashboard/Search?keyword=' . $request_id,
                     'is_read' => 'UNREAD'
                 );
     
@@ -163,7 +164,7 @@ class KelolaRequest extends CI_Controller{
                 $this->NotifikasiModel->tambah_notifikasi($data_notif);
                 $this->RequestModel->updateStatusPerangkat($perangkat_id, $status);
                 $this->session->set_flashdata('success', 'Request Support Ticket Telah Ditambahkan');
-                redirect('Karyawan/Kelolarequest');
+                redirect('Karyawan/KelolaRequest');
             }
         }
         
